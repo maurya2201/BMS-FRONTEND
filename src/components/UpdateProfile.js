@@ -73,7 +73,7 @@ function UpdateProfile() {
       dispatch(updateUserRole(localStorage.getItem("role")));
     }
     axios
-      .get("http://localhost:4000/app/showUser/" + userSId)
+      .get("https://bms-b.onrender.com/app/showUser/" + userSId)
       .then((res) => {
         if (res.status === 200) {
           initialValues.firstname = res.data.firstname;
@@ -100,7 +100,7 @@ function UpdateProfile() {
   const onUpdate = (values) => {
     if (pass === values.password) {
       axios
-        .put("http://localhost:4000/app/updateUser/" + userSId,values)
+        .put("https://bms-b.onrender.com/app/updateUser/" + userSId,values)
         .then((res) => {
           if (res.status === 200) {
             {
