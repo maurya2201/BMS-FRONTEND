@@ -55,7 +55,7 @@ function UpdateBook() {
     values.cover = base64Image;
     axios
       .put(
-        "http://localhost:4000/app/updateBook/" + bookid,
+        "https://bms-b.onrender.com/app/updateBook/" + bookid,
         values
       )
       .then((res) => {
