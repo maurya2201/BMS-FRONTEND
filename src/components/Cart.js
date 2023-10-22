@@ -96,7 +96,7 @@ export default function Cart() {
       dispatch(updateUserId(id));
     }
     axios
-      .get("http://localhost:4000/app/showAllBooks")
+      .get("https://bms-b.onrender.com/app/showAllBooks")
       .then((res) => {
         setBooks(res.data);
       })
@@ -104,7 +104,7 @@ export default function Cart() {
         console.log(err);
       });
     axios
-      .get("http://localhost:4000/app/showCart/" + id)
+      .get("https://bms-b.onrender.com/app/showCart/" + id)
       .then((res) => {
         setCartBook(res.data);
         setup(
@@ -155,7 +155,7 @@ export default function Cart() {
   const onSave = (item) => {
     axios
       .put(
-        "http://localhost:4000/app/updateCartQuantity/" +
+        "https://bms-b.onrender.com/app/updateCartQuantity/" +
           item.cid,
         item
       )
@@ -183,7 +183,7 @@ export default function Cart() {
     };
     axios
       .delete(
-        "http://localhost:4000/app/deleteCart/" +
+        "https://bms-b.onrender.com/app/deleteCart/" +
           userSId +
           "/" +
           bid
@@ -208,7 +208,7 @@ export default function Cart() {
           isPlaced
             ? axios
                 .put(
-                  "http://localhost:4000/app/bookSell/" +
+                  "https://bms-b.onrender.com/app/bookSell/" +
                     bid +
                     "/" +
                     cid,
