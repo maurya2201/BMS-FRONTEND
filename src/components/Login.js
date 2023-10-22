@@ -34,7 +34,7 @@ function Login() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/app/showAllUsers")
+      .get("https://bms-b.onrender.com/app/showAllUsers")
       .then((res) => {
         setUsers(res.data);
       })
