@@ -71,7 +71,7 @@ function GetBook(props) {
 
   const onDelete = (id) => {
     axios
-      .delete("http://localhost:4000/app/deleteBook/" + id)
+      .delete("https://bms-b.onrender.com/app/deleteBook/" + id)
       .then((res) => {
         if (res.status === 200) {
           toast.success("Book removed successfully!", {
@@ -126,8 +126,8 @@ function GetBook(props) {
     axios
       .get(
         userRole === "Admin" || props.path === "Home"
-          ? "http://localhost:4000/app/showAllBooks"
-          : "http://localhost:4000/app/showBooksBySeller/" + userSId
+          ? "https://bms-b.onrender.com/app/showAllBooks"
+          : "https://bms-b.onrender.com/app/showBooksBySeller/" + userSId
       )
       .then((res) => {
         setBooks(res.data);
@@ -149,7 +149,7 @@ function GetBook(props) {
   const toCart = async (uid, bid, book) => {
     if (userSId !== undefined) {
       await axios
-        .get("http://localhost:4000/app/getCartId")
+        .get("https://bms-b.onrender.com/app/getCartId")
         .then((res) => {
           cartId = res.data.cid;
         })
@@ -167,7 +167,7 @@ function GetBook(props) {
 
       axios
         .post(
-          "http://localhost:4000/app/addToCart/" +
+          "https://bms-b.onrender.com/app/addToCart/" +
             uid +
             "/" +
             bid,
